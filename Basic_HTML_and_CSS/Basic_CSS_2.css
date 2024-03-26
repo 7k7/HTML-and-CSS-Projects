@@ -1,0 +1,10 @@
+p {
+    color:aquamarine;
+    background-color: azure;
+    font-size: 50px;
+    text-align: center;
+}
+
+b {
+    text-shadow: 2px 2px 5px red;
+}

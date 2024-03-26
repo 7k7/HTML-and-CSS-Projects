@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Class Attribute and Style Element Assignments</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <style>
+            .font-1 {
+                background-color: black;
+                color: yellow;
+                font-size: large;
+            }
+            .font-2 {
+                background-color: darkblue;
+                color: white;
+                font-size: medium;
+            }
+            .giant-class {
+                font-weight: bolder;
+                font-size: 96px;
+                text-align: center;
+                text-decoration: underline;
+            }
+        </style>
+        <h2 class="font-1">This h2 element is styled per class attribute font-1</h2>
+        <h3 class="font-2">This h3 element is styled per class attricute font-2</h3>
+        <h4 class="font-1">Even though this is an h4 element, it is styled the same
+             as the h2 element becase we pointed to the class attribute font-1"</h4>
+        <p class="giant-class">This text is big.</p>
+    </body>
+</html>
