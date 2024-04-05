@@ -1,0 +1,10 @@
+#contact {
+    columns: 50px, 1;
+}
+
+#form {
+    text-align: center;
+    background-color: #00ab8d;
+    box-sizing: border-box;
+    width: 50%;
+}
