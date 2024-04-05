@@ -1,0 +1,13 @@
+body {
+    background-color: lightblue;
+    color: darkblue;
+}
+
+#Logo {
+    border: 2px dashed red;
+}
+
+/* Centers H3 tag */
+.center-text {
+    text-align: center;
+}
