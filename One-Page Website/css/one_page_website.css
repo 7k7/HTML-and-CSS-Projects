@@ -1,0 +1,12 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+}
+
+form input[type="text"] {
+    width: 25%;
+    margin: 0.1% auto;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
