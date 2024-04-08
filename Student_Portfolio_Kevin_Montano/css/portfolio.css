@@ -1,0 +1,306 @@
+/* GENERAL STYLING */
+
+/* Body */
+body {
+    margin: 0%;
+}
+
+/* styles all heading 1 elements */
+h1 {
+    text-transform: uppercase;
+    font-family: 'roboto-bold-italic', sans-serif;
+    text-align: center;
+    color: #000;
+}
+
+/* heading 1 element hover effect */
+h1:hover {
+    filter: grayscale(5%); 
+    transform: scale(1.1);
+    transition: transform 2s; 
+}
+
+/* Portfolio title styling */
+.white-text {
+    color: #fff;
+}
+
+/* styling for all paragraph elements */
+p {
+    font-family: 'roboto-regular', Perpetua, Rockwell Extra Bold, sans-serif;
+    text-align: justify;
+    letter-spacing: 1px;
+    font-size: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* hover effect for paragraph elements */
+p:hover {
+    transition: transform 1s; 
+	transform: scale(1.01);
+}
+
+/* centers text */
+.center {
+    text-align: center;
+}
+
+/* hover effect for center class */
+.center:hover {
+    transition: transform 2s;
+    transform: scale(1.1);
+}
+
+/* styling for all anchor elements */
+a {
+    color: #2201c5;
+}
+
+/* styling for quotation elements */
+q {
+    font-style: italic;
+}
+
+/* styling for image elements */
+img {
+    filter: grayscale(75%);
+    border-radius: 8px;
+    max-width: 100%;
+    height: 340px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* hover effect for image elements */
+img:hover {
+    filter: grayscale(10%);
+    transition: transform 1s;
+    transform: scale(1.1);
+}
+
+/* @media rule: screens >=576px will be 100px tall and centered vertically in the column */
+@media screen and (max-width: 576px) {
+    img {
+        height: 100px;
+        margin-top: 150px;
+    }
+}
+
+/* styling for footer element */
+footer {
+    padding: 2%;
+    background-color: #e0e0e0;
+}
+
+/* END OF GENERAL STYLING */
+
+
+
+/* NAVBAR CSS*/
+
+.navbar {
+    overflow: hidden;
+    background-color: #173b48;
+    border-bottom: 4px solid #000;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    -webkit-animation: moveNav 3s;
+    animation: moveNav 3s;
+}
+
+/* moveNav animation: moves the navbar in from the left of the screen */
+@keyframes moveNav {
+    from {left: -100vw;}
+    to {left: 0vw;}
+}
+
+/* navbar anchor elements */
+.navbar a {
+    float: left;
+    display: block;
+    color: #fff;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: 'roboto-thin-bold', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    position: relative;
+    -webkit-animation: moveNavText 3.5s;
+    animation: moveNavText 3.5s;
+}
+
+/* moveNav animation: moves text in navbar from the top  */
+@keyframes moveNavText {
+    from {top: -100vw;}
+    to {top: 0vw;}
+}
+
+/* @media rule: screens >=576px will display navbar links equally spaced */
+@media screen and (max-width: 576px) {
+    .Navbar a{
+        width: 25%; 
+        font-size: 12px;
+    }
+}
+
+/* hover effects for the nav bar */
+.navbar a:hover {
+    background-color: aqua;
+    color: #000;
+    font-weight: bold;
+}
+
+/* nav bar home link/button  */
+.navbar a.active {
+    background-color: rgb(8, 176, 176);
+}
+
+/* END NAVBAR CSS*/
+
+
+
+/* VIDEO CSS*/
+
+/* formatting the background video */
+#background-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    z-index: -1;
+}
+
+/* @media rule: >= 576px screen do not display the background video */
+@media screen and (max-width: 576px) {
+    #background-video {
+        display: none;
+    }
+}
+
+/* text overlay for background video */
+.video-text {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    width: 100%;
+    padding: 30px;
+    position: relative;
+    -webkit-animation: moveVideoText 3s;
+    animation: moveVideoText 3s;
+}
+
+/* movie animation: video-text (overlay text) moves in from bottom of page on load up */
+@keyframes moveVideoText {
+    from {top: -100vw;}
+    to {top: 0vw;}
+}
+
+/* END VIDEO CSS*/
+
+
+
+/* TABLE CSS*/
+
+/* creates a box with borders to place our text */
+* {
+    box-sizing: border-box;
+}
+
+/* styling the text-based columns i.e. About and Github */
+.column_1 {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    padding-top: 3%;
+    height: 400px;
+    background-color: honeydew;
+}
+
+/* @media rule: shows scroll bar if text overflows height of its container for screen >=576px */
+@media screen and (max-width: 576px) {
+    .column_1 {
+        overflow: auto;
+    }
+}
+
+/* styling columns with image/links i.e. laptop image and github logo */
+.column_2 {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    padding-top: 2%;
+    height: 400px;
+    background-color: #173b48;
+}
+
+/* styling the last row of two columns to provide more height and padding to contact form */
+.column_tall {
+    padding-top: 5%;
+    height: 500px;
+}
+
+/* Applies certain properties after the .row elements */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* END TABLE CSS */
+
+
+
+/* CONTACT FORM CSS */
+
+/* input[type=text] selects all input entries in the contact form for styling */
+input[type=text] {
+    width: 100%;
+    padding: 12px;
+    border: 3px solid #ccc;
+    border-radius: 4px;
+    margin-top: 7px;
+    margin-bottom: 16px;
+    resize: vertical;
+    font-family: 'roboto-thin', Perpetua, Rockwell Extra Bold;
+}
+
+/* hover effect for input entries in the contact form */
+input[type=text]:hover {
+    box-shadow: 0 0 7px #00004d inset;
+}
+
+/* styling for the submit button in the contact form */
+input[type=submit] {
+    background-color: #030323;
+    color: #fff;
+    font-weight: bold;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'robot-thin', Perpetua, Rockwell Extra Bold;
+}
+
+/* hover effects for the submit button */
+input[type=submit]:hover {
+    background-color: #fff;
+    color: #030323;
+    transition: transform 0.5s;
+    transform: scale(1.3);
+}
+
+/* styling for the form element */
+form {
+    border-radius: 7px;
+    background-color: rgb(212, 213, 213);
+    padding: 10px;
+    font-family: "Trebuchet MS", Optima;
+}
+
+/* END FORM CSS */

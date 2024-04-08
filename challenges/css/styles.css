@@ -1,0 +1,153 @@
+* {box-sizing: border-box;} /* for EIGHTH CHALLENGE */
+
+/* FIRST CHALLENGE */
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    filter: contrast(20%);
+    border-radius: 20px 50px;
+    margin-top: 55px; /* for FIFTH CHALLENGE nav bar */
+}
+
+/* /FIRST CHALLENGE */
+
+/* SECOND CHALLENGE */
+footer {
+    text-align: center;
+    font-weight: bolder;
+}
+
+/* /SECOND CHALLENGE */
+
+/* THIRD CHALLENGE */
+table, th, td {
+    border: 3px solid red;
+}
+
+table th, table td {
+    padding: 0.8em;
+}
+
+table th {
+    background-color: aquamarine;
+}
+/* /THIRD CHALLENGE */
+
+/* FOURTH CHALLENGE */
+.container {
+    display: block;
+    position: relative;
+    text-align: center;
+    color: black;
+}
+
+.container img {
+    width: 50%;
+}
+
+.overlay {
+    position: absolute;
+    font-size: 4em;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/* /FOURTH CHALLENGE */
+
+/* FIFTH CHALLENGE */
+.navbar {
+    overflow: hidden;
+    background-color: blue;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: #fff;
+    background-color: #141414;
+    text-align: center;
+    padding: 10px 12px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background-color: aqua;
+    color: #141414;
+}
+/* /FIFTH CHALLENGE */
+
+/* SIXTH CHALLENGE */
+.row {
+    display: flex;
+}
+
+.column {
+    flex: 50%;
+    color: #888;
+    background-color: rgb(50, 80, 10);
+    border: 2px solid black;
+}
+/* /SIXTH CHALLENGE */
+
+/* SEVENTH CHALLENGE */
+.change-text-color:hover {
+    color: #77b20a;
+    background-color: #888;
+}
+/* /SEVENTH CHALLENGE */
+
+/* EIGHTH CHALLENGE */
+
+.image-container {
+    position: relative;
+    width: 50%;
+    max-width: 300px;
+}
+
+.html-logo {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.overlay-text {
+    position: absolute;
+    bottom: 0;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 100%;
+    transition: .5s ease;
+    opacity: 0;
+    color: white;
+    font-size: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+.image-container:hover .overlay-text {
+    opacity: 1;
+}
+/* /EIGHTH CHALLENGE */
+
+/* TENTH CHALLENGE */
+.container-video {
+    position: relative;
+    text-align: center;
+    color: #fff;
+}
+
+.overlay-video {
+    font-size: large;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/* /TENTH CHALLENGE */
