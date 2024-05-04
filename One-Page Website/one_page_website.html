@@ -4,6 +4,7 @@
         <title>The Treeframe Cabin</title>
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="css/one_page_website.css">
+        <script src="JS/one_page_website.js" defer></script>
     </head>
     <body>
         <!--NAV BAR-->
@@ -29,7 +30,7 @@
         <section>
             <div id="home">
                 <div>
-                    <img src="images/background.webp" alt="The Treeframe Cabin background image">
+                    <img src="images/background.png" alt="The Treeframe Cabin background image">
                     <div>
                         <h1>The Treeframe cabin</h1>
                         <p>Located in Kelso, Wa, etc. some nice stuff here....</p>
@@ -64,67 +65,124 @@
         <section>
             <div id="gallery">
             <h2>Here's a glimpse of your stay...</h2>
-                <div>
-                    
+            <!-- Thumbnail images used to open the lightbox -->
+                <div class="row">
+
                     <!--PHOTO-CONTAINER 1-->
-                    <div>
-                        <h3>outside</h3>
-                        <img src="images/outside.webp" alt="outisde of cabin">
-                        <details>
-                            <summary>See more images</summary>
-                            <div>
-                                <img src="images/outside.webp" alt="outside of cabin">
-                            </div>
-                        </details>  
+                    <div class="column">
+                        <img src="images/outside_tn.png" style="width:100%" alt="outisde of cabin"
+                            onclick="openModal(); currentSlide(1)" class="hover-shadow">
                     </div>
                     <!--END PHOTO-CONTAINER 1-->
 
                     <!--PHOTO-CONTAINER 2-->
-                    <div>
-                        <h3>bedrooms</h3>
-                        <img src="images/bedroom.webp" alt="bedroom">
-                        <details>
-                            <summary>See more images</summary>
-                            <div>
-                                <img src="images/bedroom.webp" alt="bedroom">
-                            </div>
-                        </details>  
+                    <div class="column">
+                        <img src="images/bedroom_tn.png" style="width:100%" alt="bedroom"
+                            onclick="openModal(); currentSlide(2)" class="hover-shadow">
                     </div>
                     <!--END PHOTO-CONTAINER 2-->
 
                     <!--PHOTO-CONTAINER 3-->
-                    <div>
-                        <h3>bath</h3>
-                        <img src="images/bath.webp" alt="bath"> 
+                    <div class="column">
+                        <img src="images/bath_tn.png" style="width:100%" alt="bath"
+                            onclick="openModal(); currentSlide(3)" class="hover-shadow"> 
                     </div>
                     <!--END PHOTO-CONTAINER 3-->
 
                     <!--PHOTO-CONTAINER 4-->
-                    <div>
-                        <h3>Living Room</h3>
-                        <img src="images/living_room.webp" alt="living room">
-                        <details>
-                            <summary>See more images</summary>
-                            <div>
-                                <img src="images/living_room.webp" alt="living room">
-                            </div>
-                        </details>   
+                    <div class="column">
+                        <img src="images/living_room_tn.png" style="width:100%" alt="living room"
+                            onclick="openModal(); currentSlide(4)" class="hover-shadow">
                     </div>
                     <!--END PHOTO-CONTAINER 4-->
 
                     <!--PHOTO-CONTAINER 5-->
-                    <div>
-                        <h3>Recreation</h3>
-                        <img src="images/hot_tub.png" alt="hot tub"> 
-                        <details>
-                            <summary>See more images</summary>
-                            <div>
-                                <img src="images/hot_tub.png" alt="hot tub">
-                            </div>
-                        </details>  
+                    <div class="column">
+                        <img src="images/hot_tub_tn.png" style="width:100%" alt="hot tub"
+                            onclick="openModal(); currentSlide(5)" class="hover-shadow"> 
                     </div>
                     <!--END PHOTO-CONTAINER 5-->
                 </div>
+                <!-- END Thumbnail images used to open the lightbox -->
+
+                <!-- Lightbox -->
+                <div id="myModal" class="modal">
+                    <span class="close cursor" onclick="closeModal()">&times;</span>
+
+                    <!-- Modal content -->
+                    <div class="modal-content">
+
+                        <!-- SLIDE IMAGES WITH IMAGE COUNT -->
+                        <div class="slides">
+                            <div class="imageCount">1 out of 5</div>
+                            <img src="images/outside.png" style="width: 100%;" alt="outisde of cabin">
+                        </div>
+
+                        <div class="slides">
+                            <div class="imageCount">2 out of 5</div>
+                            <img src="images/bedroom.png" style="width: 100%;" alt="bedroom">
+                        </div>
+
+                        <div class="slides">
+                            <div class="imageCount">3 out of 5</div>
+                            <img src="images/bath.png" style="width: 100%;" alt="bath"> 
+                        </div>
+
+                        <div class="slides">
+                            <div class="imageCount">4 out of 5</div>
+                            <img src="images/living_room.png" style="width: 100%;" alt="living room">
+                        </div>
+
+                        <div class="slides">
+                            <div class="imageCount">5 out of 5</div>
+                            <img src="images/hot_tub.png" style="width: 100%;" alt="hot tub">
+                        </div>
+                        <!-- END SLIDE IMAGES -->
+
+                        <!-- next / prev controls -->
+                        <a class="prev" onclick="nextSlide(-1)">&#10094;</a>
+                        <a class="next" onclick="nextSlide(1)">&#10095;</a>
+                        <!-- END next / prev controls -->
+
+                        <!-- Caption text -->
+                        <div class="caption-container">
+                            <p id="caption"></p>
+                        </div>
+                        <!-- END caption text -->
+
+                        <!-- Thumbnail image controls -->
+                        <div class="column">
+                            <img class="thumbnail cursor" style="width:100%" src="images/outside_tn.png" alt="outside cabin"
+                                onclick="currentSlide(1)">
+                        </div>
+
+                        <div class="column">
+                            <img class="thumbnail cursor" style="width:100%" src="images/bedroom_tn.png" alt="bedroom"
+                                onclick="currentSlide(2)">
+                        </div>
+
+                        <div class="column">
+                            <img class="thumbnail cursor" style="width:100%" src="images/bath_tn.png" alt="bath"
+                                onclick="currentSlide(3)">
+                        </div>
+
+                        <div class="column">
+                            <img class="thumbnail cursor" style="width:100%" src="images/living_room_tn.png" alt="living room"
+                                onclick="currentSlide(4)">
+                        </div>
+
+                        <div class="column">
+                            <img class="thumbnail cursor" style="width:100%" src="images/hot_tub_tn.png" alt="hot tub"
+                                onclick="currentSlide(5)">
+                        </div>
+                        <!-- END thumbnail image controls -->
+
+                    </div>
+                    <!-- END model content -->
+
+                </div>
+                <!-- END Lightbox -->
+
             </div>
         </section>
         <!--END GALLERY-->
