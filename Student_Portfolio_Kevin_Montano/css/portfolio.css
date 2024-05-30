@@ -1,8 +1,24 @@
 /* GENERAL STYLING */
 
+html {
+    scroll-behavior: smooth;
+}
+
 /* Body */
 body {
     margin: 0%;
+    opacity: 1;
+    transition: 3s opacity;
+    letter-spacing: .2vw;
+    font-family: Avant Garde, Helvetica;
+    font-size: 1.5vw;
+    overflow-x: hidden;
+    user-select: none;
+}
+
+/* Sets the level of opacity for the fade effect at the start of the page load */
+body.fade-out {
+    opacity: .1;
 }
 
 /* styles all heading 1 elements */
@@ -11,33 +27,35 @@ h1 {
     font-family: 'roboto-bold-italic', sans-serif;
     text-align: center;
     color: #000;
+    margin-top: 3%;
 }
 
 /* heading 1 element hover effect */
 h1:hover {
-    filter: grayscale(5%); 
+    filter: grayscale(5%);
     transform: scale(1.1);
-    transition: transform 2s; 
+    transition: transform 1s;
 }
 
 /* Portfolio title styling */
 .white-text {
     color: #fff;
+    padding-top: 10vh;
 }
 
 /* styling for all paragraph elements */
 p {
     font-family: 'roboto-regular', Perpetua, Rockwell Extra Bold, sans-serif;
     text-align: justify;
-    letter-spacing: 1px;
-    font-size: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
+    letter-spacing: .1vw;
+    font-size: 2.5vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
 }
 
 /* hover effect for paragraph elements */
 p:hover {
-    transition: transform 1s; 
+    transition: transform 1s;
 	transform: scale(1.01);
 }
 
@@ -55,6 +73,8 @@ p:hover {
 /* styling for all anchor elements */
 a {
     color: #2201c5;
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 /* styling for quotation elements */
@@ -67,25 +87,14 @@ img {
     filter: grayscale(75%);
     border-radius: 8px;
     max-width: 100%;
-    height: 340px;
+    height: 100%;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto auto auto auto;
 }
 
 /* hover effect for image elements */
 img:hover {
-    filter: grayscale(10%);
-    transition: transform 1s;
-    transform: scale(1.1);
-}
-
-/* @media rule: screens >=576px will be 100px tall and centered vertically in the column */
-@media screen and (max-width: 576px) {
-    img {
-        height: 100px;
-        margin-top: 150px;
-    }
+    filter: grayscale(5%);
 }
 
 /* styling for footer element */
@@ -103,19 +112,18 @@ footer {
 .navbar {
     overflow: hidden;
     background-color: #173b48;
-    border-bottom: 4px solid #000;
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 100;
-    -webkit-animation: moveNav 3s;
-    animation: moveNav 3s;
+    z-index: 1;
+    -webkit-animation: moveNav 5s;
+    animation: moveNav 5s;
 }
 
 /* moveNav animation: moves the navbar in from the left of the screen */
 @keyframes moveNav {
-    from {left: -100vw;}
-    to {left: 0vw;}
+    0% {left: -100vw;}
+    100% {left: 0vw;}
 }
 
 /* navbar anchor elements */
@@ -123,40 +131,34 @@ footer {
     float: left;
     display: block;
     color: #fff;
-    padding: 14px 16px;
+    padding: .75vw 1vw;
     text-decoration: none;
-    font-family: 'roboto-thin-bold', sans-serif;
-    font-size: 20px;
+    font-family: Avant Garde, Helvetica, sans-serif;
+    font-size: 1.5vw;
     text-align: center;
     position: relative;
-    -webkit-animation: moveNavText 3.5s;
-    animation: moveNavText 3.5s;
+    -webkit-animation: moveNavText 5.75s;
+    animation: moveNavText 5.75s;
 }
 
 /* moveNav animation: moves text in navbar from the top  */
 @keyframes moveNavText {
-    from {top: -100vw;}
-    to {top: 0vw;}
-}
-
-/* @media rule: screens >=576px will display navbar links equally spaced */
-@media screen and (max-width: 576px) {
-    .Navbar a{
-        width: 25%; 
-        font-size: 12px;
-    }
+    0% {top: -100vw;}
+    100% {top: 0vw;}
 }
 
 /* hover effects for the nav bar */
 .navbar a:hover {
-    background-color: aqua;
+    background-color: rgb(8, 176, 176);
     color: #000;
     font-weight: bold;
+    cursor: pointer;
+    transition: 0.5s ease-in;
 }
 
 /* nav bar home link/button  */
 .navbar a.active {
-    background-color: rgb(8, 176, 176);
+    background-color: rgb(1, 116, 116);
 }
 
 /* END NAVBAR CSS*/
@@ -186,21 +188,136 @@ footer {
     background-color: rgba(0, 0, 0, 0.5);
     color: #fff;
     width: 100%;
-    padding: 30px;
+    height: 100vh;
+    padding-top: 2vh;
     position: relative;
-    -webkit-animation: moveVideoText 3s;
-    animation: moveVideoText 3s;
+    -webkit-animation: moveVideoText 3.5s;
+    animation: moveVideoText 3.5s;
 }
 
 /* movie animation: video-text (overlay text) moves in from bottom of page on load up */
 @keyframes moveVideoText {
-    from {top: -100vw;}
-    to {top: 0vw;}
+    0% {top: -100vw;}
+    100% {top: 0vw;}
 }
 
 /* END VIDEO CSS*/
 
 
+
+/* SLIDESHOW CSS */
+/* layers a slighlty transparent white bkgd over video */
+#slideshow-background {
+    background: rgba(255, 255, 255, 0.35); /* This creates a slightly transparent white background that's palced over the video in the background */
+}
+
+/* slides not displayed by default */
+.mySlides {
+    display: none;
+}
+
+#slideshow-container {
+    width: 39.5vw;
+    height: auto;
+    padding-top: 4%;
+    position: relative;
+    margin: auto;
+}
+
+/* removes underline from the anchor prev and next buttons in the slideshow */
+#slideshow-container a {
+    text-decoration: none;
+}
+
+/* slideshow images */
+.slideshow-images {
+    vertical-align: middle;
+    height: auto;
+    box-shadow: 0px 5px 10px 12px rgba(0, 0, 0, .75);
+    width: 100%;
+}
+
+/* Next and previous buttons */
+.next, .previous {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 2vw;
+    color: #807c7c;
+    font-weight: bold;
+    font-size: 1.5vw;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    transition: 0.6s ease;
+}
+
+/* positioning the next btn on the right side */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* hover effect for prev and next slideshow buttons */
+.previous:hover, .next:hover{
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+}
+
+/* slideshow text */
+.text {
+    color: white;
+    padding: 1vw;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-family: Perpetua, Rockwell Extra Bold;
+    letter-spacing: .1vw;
+    font-size: 1.5vw;
+    background-color: rgba(0, 0, 0, 0.75);
+    font-weight: bold;
+    border-radius: 0px 0px 7px 7px;
+}
+
+/* dots under the slideshow */
+.dot {
+    cursor: pointer;
+    height: 1vw;
+    width: 1vw;
+    margin: .25vw;
+    background-color: white;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    z-index: 1;
+}
+
+/* hover effect for slideshow dots */
+.active, .dot:hover {
+    background-color: black;
+}
+
+/* fading animation for slideshow */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+}
+
+/* defining animation transition: begins transparent then ends opaque */
+@-webkit-keyframes fade {
+    0% {opacity: .4;}
+    100% {opacity: 1;}
+}
+
+@keyframes fade {
+    0% {opacity: .4;}
+    100% {opacity: 1;}
+}
+
+/* END SLIDESHOW CSS */
 
 /* TABLE CSS*/
 
@@ -213,33 +330,18 @@ footer {
 .column_1 {
     float: left;
     width: 50%;
-    padding: 10px;
-    padding-top: 3%;
-    height: 400px;
+    padding: 1.6%;
+    height: 450px;
     background-color: honeydew;
-}
-
-/* @media rule: shows scroll bar if text overflows height of its container for screen >=576px */
-@media screen and (max-width: 576px) {
-    .column_1 {
-        overflow: auto;
-    }
 }
 
 /* styling columns with image/links i.e. laptop image and github logo */
 .column_2 {
     float: left;
     width: 50%;
-    padding: 10px;
-    padding-top: 2%;
-    height: 400px;
+    padding: 1.6%;
+    height: 450px;
     background-color: #173b48;
-}
-
-/* styling the last row of two columns to provide more height and padding to contact form */
-.column_tall {
-    padding-top: 5%;
-    height: 500px;
 }
 
 /* Applies certain properties after the .row elements */
@@ -254,53 +356,170 @@ footer {
 
 
 /* CONTACT FORM CSS */
-
-/* input[type=text] selects all input entries in the contact form for styling */
-input[type=text] {
-    width: 100%;
-    padding: 12px;
-    border: 3px solid #ccc;
-    border-radius: 4px;
-    margin-top: 7px;
-    margin-bottom: 16px;
-    resize: vertical;
-    font-family: 'roboto-thin', Perpetua, Rockwell Extra Bold;
-}
-
-/* hover effect for input entries in the contact form */
-input[type=text]:hover {
-    box-shadow: 0 0 7px #00004d inset;
-}
-
-/* styling for the submit button in the contact form */
-input[type=submit] {
-    background-color: #030323;
-    color: #fff;
-    font-weight: bold;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 8px;
+/* Contact button afixed to the bottom right hand corner that opens the contact form */
+.pop-up-button {
+    position: fixed;
+    bottom: 1.75vw;
+    right: 1.75vw;
+    width: 25vw;
+    background-color: white;
+    color: black;
+    border: solid black;
     cursor: pointer;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    font-family: 'robot-thin', Perpetua, Rockwell Extra Bold;
+    -webkit-animation: movePopUp 5s;
+    animation: movePopUp 5s;
 }
 
-/* hover effects for the submit button */
-input[type=submit]:hover {
-    background-color: #fff;
-    color: #030323;
-    transition: transform 0.5s;
-    transform: scale(1.3);
+/* animation: slides in contact button from the right side to its fixed location */
+@keyframes movePopUp {
+    0% {right: -40vw;}
+    100% {right: 1.75vw;}
 }
 
-/* styling for the form element */
-form {
-    border-radius: 7px;
-    background-color: rgb(212, 213, 213);
-    padding: 10px;
+@-webkit-keyframes movePopUp {
+    0% {right: -40vw;}
+    100% {right: 1.75vw;}
+}
+
+/* css for contact form */
+/* form container styling */
+.form-popup {
+    z-index: 8;
+    display: none;
+    position: fixed;
+    bottom: .5vw;
+    right: .5vw;
+}
+
+/* form itself css */
+.form-container {
+    max-width: 49vw;
+    padding: 1vw;
+    background-color: white;
+}
+
+/* input fields */
+.form-container input[type=text] {
+    width: 100%;
+    padding: .93vw;
+    margin: .6vw 0 .6vw 0;
+    border: none;
+    background: gainsboro;
+    font-size: 1vw;
+}
+
+/* css for all buttons */
+button {
     font-family: "Trebuchet MS", Optima;
+    letter-spacing: .3vw;
+    font-size: 1.5vw;
+    font-weight: bold;
+    padding: 1.5vw;
+    cursor: pointer;
+    width: 100%;
+    height: auto;
 }
 
-/* END FORM CSS */
+/* hover effect for both contact and submit buttons */
+button:hover, .form-container .btn:hover {
+    color: white;
+    background-color: black;
+    transition-duration: 1s;
+    -webkit-transition-duration: 1s;
+    border-color: silver;
+}
+
+/* css for submit button */
+.form-container .btn {
+    background-color: white;
+    color: black;
+    border-color: black;
+    margin-bottom: 1vh;
+}
+
+/* css for cancel button */
+.form-container .cancel {
+    background-color: black;
+    color: white;
+    border-color: gray;
+}
+
+/* styling for close button upon hovering over */
+.form-container .cancel:hover {
+    color: white;
+    background-color: #870404;
+    transition-duration: 1s;
+    -webkit-transition-duration: 1s;
+    border-color: black;
+}
+
+/* END CONTACT FORM */
+
+
+
+/* MEDIA QUERY CSS */
+
+/* media rules that apply to paragraph font sizing for different screen sizes */
+@media screen and (max-width: 527px) {
+    p {font-size: 3.75vw;}
+}
+
+@media screen and (min-width: 528px) and (max-width: 660px) {
+    p {font-size: 3.5vw;}
+}
+
+@media screen and (min-width: 661px) and (max-width: 799px) {
+    p {font-size: 2.75vw;}
+}
+
+@media screen and (min-width: 800px) and (max-width: 924px) {
+    p {font-size: 2.5vw;}
+}
+
+@media screen and (min-width: 925px) and (max-width: 1050px) {
+    p {font-size: 2.25vw;}
+}
+
+@media screen and (min-width: 1051px) and (max-width: 1310px) {
+    p {font-size: 2vw;}
+}
+
+@media screen and (min-width: 1311px) and (max-width: 1535px) {
+    p {font-size: 1.75vw;}
+}
+
+@media screen and (min-width: 1536px) and (max-width: 2269px) {
+    p {font-size: 1.5vw;}
+}
+
+@media screen and (min-width: 2270px) {
+    p {font-size: 1.35vw;}
+}
+
+/* Media rule for navbar links for different screen sizes */
+/* @media rule: screens >=1080px will display navbar links equally spaced */
+@media screen and (max-width: 1080px) {
+    .navbar a{
+        width: 20%;
+        font-size: 2.5vw;
+    }
+}
+
+/* @media rule: for smaller screen; enlarge the font of the white text */
+@media screen and (max-width: 1080px) {
+    .quote {font-size: 3.5vw;}
+
+    .white-text {font-size: 4.5vw;}
+}
+
+/* @media rule: columns size increase for screen >= 1725px (larger screens) */
+@media screen and (min-width: 1725px) {
+    .column_1 {height: 550px;}
+
+    .column_2 {height: 550px;}
+}
+
+/* @media rule: remove margin-top from h1 elements for screens >=2000px x-large screens (so that the paragraph text fits in the column) */
+@media screen and (min-width: 2000px) {
+    h1 {margin-top: 0;}
+}
